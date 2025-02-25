@@ -1,14 +1,14 @@
 import { Home, User, FolderGit2, Menu } from "lucide-react";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle } from "@/components/common/theme-toggle";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "./ui/navigation-menu";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+} from "../ui/navigation-menu";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
 import { useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
