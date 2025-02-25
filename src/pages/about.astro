@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { Github, BookMarked, Laptop2 } from 'lucide-react';
+import Layout from "@/layouts/Layout.astro";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Github, BookMarked, Laptop2 } from "lucide-react";
 ---
 
 <Layout title="About Me - Portfolio">
@@ -36,13 +36,17 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
       <section class="mb-12">
         <div class="rounded-xl border bg-card p-8 shadow-lg">
           <div class="flex items-center gap-4">
-            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md"
+            >
               <BookMarked className="h-6 w-6" />
             </div>
             <h2 class="text-3xl font-bold">Career</h2>
           </div>
           <div class="mt-8 space-y-8">
-            <div class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+            <div
+              class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg"
+            >
               <h3 class="text-xl font-semibold">Senior Developer</h3>
               <p class="mt-2 text-muted-foreground">Company Name | 2020 - Present</p>
               <p class="mt-4">
@@ -50,7 +54,9 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
                 モダンな技術スタックを活用し、パフォーマンスと保守性の高いアプリケーションを提供。
               </p>
             </div>
-            <div class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+            <div
+              class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg"
+            >
               <h3 class="text-xl font-semibold">Web Developer</h3>
               <p class="mt-2 text-muted-foreground">Previous Company | 2018 - 2020</p>
               <p class="mt-4">
@@ -66,13 +72,17 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
       <section class="mb-12">
         <div class="rounded-xl border bg-card p-8 shadow-lg">
           <div class="flex items-center gap-4">
-            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md"
+            >
               <Laptop2 className="h-6 w-6" />
             </div>
             <h2 class="text-3xl font-bold">Skills</h2>
           </div>
           <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+            <div
+              class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg"
+            >
               <h3 class="text-xl font-semibold">Frontend</h3>
               <ul class="mt-4 space-y-2 text-muted-foreground">
                 <li>React / Next.js</li>
@@ -81,7 +91,9 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
                 <li>HTML5 / CSS3</li>
               </ul>
             </div>
-            <div class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+            <div
+              class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg"
+            >
               <h3 class="text-xl font-semibold">Backend</h3>
               <ul class="mt-4 space-y-2 text-muted-foreground">
                 <li>Node.js</li>
@@ -90,7 +102,9 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
                 <li>GraphQL</li>
               </ul>
             </div>
-            <div class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+            <div
+              class="rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg"
+            >
               <h3 class="text-xl font-semibold">Other</h3>
               <ul class="mt-4 space-y-2 text-muted-foreground">
                 <li>Git</li>
@@ -107,7 +121,9 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
       <section>
         <div class="rounded-xl border bg-card p-8 shadow-lg">
           <div class="flex items-center gap-4">
-            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md"
+            >
               <Github className="h-6 w-6" />
             </div>
             <h2 class="text-3xl font-bold">Links</h2>
@@ -131,12 +147,10 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
               rel="noopener noreferrer"
               class="flex items-center gap-4 rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg"
             >
-              <svg
-                viewBox="0 0 24 24"
-                class="h-6 w-6"
-                fill="currentColor"
-              >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                ></path>
               </svg>
               <div>
                 <h3 class="font-semibold">X (Twitter)</h3>
@@ -149,12 +163,10 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
               rel="noopener noreferrer"
               class="flex items-center gap-4 rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg"
             >
-              <svg
-                viewBox="0 0 24 24"
-                class="h-6 w-6"
-                fill="currentColor"
-              >
-                <path d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z" />
+              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor">
+                <path
+                  d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z"
+                ></path>
               </svg>
               <div>
                 <h3 class="font-semibold">Zenn</h3>
@@ -167,12 +179,10 @@ import { Github, BookMarked, Laptop2 } from 'lucide-react';
               rel="noopener noreferrer"
               class="flex items-center gap-4 rounded-lg border bg-background p-6 shadow-md transition-all duration-300 hover:shadow-lg"
             >
-              <svg
-                viewBox="0 0 24 24"
-                class="h-6 w-6"
-                fill="currentColor"
-              >
-                <path d="M7.883 11.615c0-1.92-1.474-3.904-3.974-3.904C1.987 7.71 0 9.183 0 11.679c0 1.92 1.474 3.905 3.973 3.905 1.987 0 3.91-1.474 3.91-3.97zm7.95-3.905c-2.499 0-3.973 1.984-3.973 3.904 0 2.496 1.923 3.97 3.91 3.97 2.499 0 3.973-1.985 3.973-3.905 0-2.496-1.987-3.969-3.91-3.969zm8.167 0c-2.499 0-3.973 1.984-3.973 3.904 0 2.496 1.923 3.97 3.91 3.97 2.499 0 3.973-1.985 3.973-3.905 0-2.496-1.987-3.969-3.91-3.969z" />
+              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor">
+                <path
+                  d="M7.883 11.615c0-1.92-1.474-3.904-3.974-3.904C1.987 7.71 0 9.183 0 11.679c0 1.92 1.474 3.905 3.973 3.905 1.987 0 3.91-1.474 3.91-3.97zm7.95-3.905c-2.499 0-3.973 1.984-3.973 3.904 0 2.496 1.923 3.97 3.91 3.97 2.499 0 3.973-1.985 3.973-3.905 0-2.496-1.987-3.969-3.91-3.969zm8.167 0c-2.499 0-3.973 1.984-3.973 3.904 0 2.496 1.923 3.97 3.91 3.97 2.499 0 3.973-1.985 3.973-3.905 0-2.496-1.987-3.969-3.91-3.969z"
+                ></path>
               </svg>
               <div>
                 <h3 class="font-semibold">Qiita</h3>

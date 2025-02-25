@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { ExternalLink, Github } from 'lucide-react';
+import Layout from "@/layouts/Layout.astro";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { ExternalLink, Github } from "lucide-react";
 ---
 
 <Layout title="Works - Portfolio">
@@ -14,94 +14,98 @@ import { ExternalLink, Github } from 'lucide-react';
       <section class="mb-12">
         <div class="rounded-xl border bg-card p-8 shadow-lg">
           <h1 class="text-4xl font-bold">Works</h1>
-          <p class="mt-4 text-xl text-muted-foreground">
-            これまでに制作した作品をご紹介します。
-          </p>
+          <p class="mt-4 text-xl text-muted-foreground">これまでに制作した作品をご紹介します。</p>
         </div>
       </section>
 
       {/* Projects Grid */}
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          {
-            title: "Task Manager",
-            description: "シンプルで使いやすいタスク管理アプリ。Reactとモダンな技術スタックを活用。",
-            image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
-            demoUrl: "https://example.com/task-manager",
-            githubUrl: "https://github.com/yourusername/task-manager"
-          },
-          {
-            title: "Financial Dashboard",
-            description: "美しいUIで資産管理を可視化。リアルタイムデータ連携とグラフ表示機能を実装。",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-            demoUrl: "https://example.com/financial-dashboard",
-            githubUrl: "https://github.com/yourusername/financial-dashboard"
-          },
-          {
-            title: "Blog Platform",
-            description: "Markdownサポート付きのモダンなブログプラットフォーム。SEO対策も万全。",
-            image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop",
-            demoUrl: "https://example.com/blog-platform",
-            githubUrl: "https://github.com/yourusername/blog-platform"
-          },
-          {
-            title: "E-commerce App",
-            description: "Next.jsで構築したモダンなECサイト。高速な表示とスムーズな購入体験を実現。",
-            image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074&auto=format&fit=crop",
-            demoUrl: "https://example.com/ecommerce",
-            githubUrl: "https://github.com/yourusername/ecommerce"
-          },
-          {
-            title: "Chat Application",
-            description: "リアルタイムチャットアプリ。WebSocketを使用した双方向通信を実装。",
-            image: "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?q=80&w=2187&auto=format&fit=crop",
-            demoUrl: "https://example.com/chat-app",
-            githubUrl: "https://github.com/yourusername/chat-app"
-          },
-          {
-            title: "Weather App",
-            description: "美しいアニメーションと直感的なUIを備えた天気予報アプリ。位置情報連携機能付き。",
-            image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2006&auto=format&fit=crop",
-            demoUrl: "https://example.com/weather-app",
-            githubUrl: "https://github.com/yourusername/weather-app"
-          }
-        ].map((project) => (
-          <div class="group relative flex h-[400px] flex-col overflow-hidden rounded-xl border bg-card shadow-lg transition-all duration-300 hover:shadow-xl">
-            <div class="aspect-video">
-              <img
-                src={project.image}
-                alt={project.title}
-                class="h-full w-full object-cover"
-              />
-            </div>
-            <div class="flex flex-1 flex-col p-6">
-              <h2 class="text-xl font-semibold">{project.title}</h2>
-              <p class="mt-2 flex-1 text-muted-foreground">
-                {project.description}
-              </p>
-              <div class="mt-6 flex justify-end gap-4">
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
-                  aria-label="アプリを開く"
-                >
-                  <ExternalLink className="h-5 w-5" />
-                </a>
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
-                  aria-label="ソースコードを見る"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
+        {
+          [
+            {
+              title: "Task Manager",
+              description:
+                "シンプルで使いやすいタスク管理アプリ。Reactとモダンな技術スタックを活用。",
+              image:
+                "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+              demoUrl: "https://example.com/task-manager",
+              githubUrl: "https://github.com/yourusername/task-manager",
+            },
+            {
+              title: "Financial Dashboard",
+              description:
+                "美しいUIで資産管理を可視化。リアルタイムデータ連携とグラフ表示機能を実装。",
+              image:
+                "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+              demoUrl: "https://example.com/financial-dashboard",
+              githubUrl: "https://github.com/yourusername/financial-dashboard",
+            },
+            {
+              title: "Blog Platform",
+              description: "Markdownサポート付きのモダンなブログプラットフォーム。SEO対策も万全。",
+              image:
+                "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop",
+              demoUrl: "https://example.com/blog-platform",
+              githubUrl: "https://github.com/yourusername/blog-platform",
+            },
+            {
+              title: "E-commerce App",
+              description:
+                "Next.jsで構築したモダンなECサイト。高速な表示とスムーズな購入体験を実現。",
+              image:
+                "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074&auto=format&fit=crop",
+              demoUrl: "https://example.com/ecommerce",
+              githubUrl: "https://github.com/yourusername/ecommerce",
+            },
+            {
+              title: "Chat Application",
+              description: "リアルタイムチャットアプリ。WebSocketを使用した双方向通信を実装。",
+              image:
+                "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?q=80&w=2187&auto=format&fit=crop",
+              demoUrl: "https://example.com/chat-app",
+              githubUrl: "https://github.com/yourusername/chat-app",
+            },
+            {
+              title: "Weather App",
+              description:
+                "美しいアニメーションと直感的なUIを備えた天気予報アプリ。位置情報連携機能付き。",
+              image:
+                "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2006&auto=format&fit=crop",
+              demoUrl: "https://example.com/weather-app",
+              githubUrl: "https://github.com/yourusername/weather-app",
+            },
+          ].map((project) => (
+            <div class="group relative flex h-[400px] flex-col overflow-hidden rounded-xl border bg-card shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div class="aspect-video">
+                <img src={project.image} alt={project.title} class="h-full w-full object-cover" />
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <h2 class="text-xl font-semibold">{project.title}</h2>
+                <p class="mt-2 flex-1 text-muted-foreground">{project.description}</p>
+                <div class="mt-6 flex justify-end gap-4">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
+                    aria-label="アプリを開く"
+                  >
+                    <ExternalLink className="h-5 w-5" />
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
+                    aria-label="ソースコードを見る"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </main>
 

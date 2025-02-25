@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { ArrowRight, Mail } from 'lucide-react';
+import Layout from "@/layouts/Layout.astro";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { ArrowRight, Mail } from "lucide-react";
 ---
 
 <Layout title="Portfolio">
@@ -17,7 +17,8 @@ import { ArrowRight, Mail } from 'lucide-react';
             <div class="flex-1">
               <h1 class="text-4xl font-bold">Hi, I'm Your Name</h1>
               <p class="mt-4 text-xl text-muted-foreground">
-                A passionate developer focused on creating beautiful and functional web applications.
+                A passionate developer focused on creating beautiful and functional web
+                applications.
               </p>
             </div>
             <div class="h-32 w-32 overflow-hidden rounded-full shadow-lg md:h-48 md:w-48">
@@ -34,13 +35,18 @@ import { ArrowRight, Mail } from 'lucide-react';
       {/* About Section */}
       <section class="mb-12">
         <a href="/about" class="group block">
-          <div class="relative rounded-xl border bg-card p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
+          <div
+            class="relative rounded-xl border bg-card p-8 shadow-lg transition-all duration-300 hover:shadow-xl"
+          >
             <h2 class="text-3xl font-bold">About Me</h2>
             <p class="mt-4 text-muted-foreground">
-              Full-stack developer with expertise in modern web technologies.
-              Passionate about creating user-friendly applications and solving complex problems.
+              Full-stack developer with expertise in modern web technologies. Passionate about
+              creating user-friendly applications and solving complex problems.
             </p>
-            <ArrowRight className="absolute right-8 top-8 h-6 w-6 transition-transform group-hover:translate-x-2" client:load />
+            <ArrowRight
+              className="absolute right-8 top-8 h-6 w-6 transition-transform group-hover:translate-x-2"
+              client:load
+            />
           </div>
         </a>
       </section>
@@ -48,28 +54,35 @@ import { ArrowRight, Mail } from 'lucide-react';
       {/* Works Section */}
       <section class="mb-12">
         <a href="/works" class="group block">
-          <div class="relative rounded-xl border bg-card p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
+          <div
+            class="relative rounded-xl border bg-card p-8 shadow-lg transition-all duration-300 hover:shadow-xl"
+          >
             <h2 class="text-3xl font-bold">Works</h2>
             <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map((i) => (
-                <div class="overflow-hidden rounded-lg border bg-background shadow-md transition-all duration-300 hover:shadow-lg">
-                  <div class="aspect-video">
-                    <img
-                      src={`https://images.unsplash.com/photo-1618335829737-2228915674e0?q=80&w=200&auto=format&fit=crop&crop=entropy`}
-                      alt={`Work ${i}`}
-                      class="h-full w-full object-cover"
-                    />
+              {
+                [1, 2, 3].map((i) => (
+                  <div class="overflow-hidden rounded-lg border bg-background shadow-md transition-all duration-300 hover:shadow-lg">
+                    <div class="aspect-video">
+                      <img
+                        src={`https://images.unsplash.com/photo-1618335829737-2228915674e0?q=80&w=200&auto=format&fit=crop&crop=entropy`}
+                        alt={`Work ${i}`}
+                        class="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div class="p-4">
+                      <h3 class="font-semibold">Work {i}</h3>
+                      <p class="mt-2 text-sm text-muted-foreground">
+                        A brief description of work {i} and its key features.
+                      </p>
+                    </div>
                   </div>
-                  <div class="p-4">
-                    <h3 class="font-semibold">Work {i}</h3>
-                    <p class="mt-2 text-sm text-muted-foreground">
-                      A brief description of work {i} and its key features.
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))
+              }
             </div>
-            <ArrowRight className="absolute right-8 top-8 h-6 w-6 transition-transform group-hover:translate-x-2" client:load />
+            <ArrowRight
+              className="absolute right-8 top-8 h-6 w-6 transition-transform group-hover:translate-x-2"
+              client:load
+            />
           </div>
         </a>
       </section>
@@ -94,12 +107,10 @@ import { ArrowRight, Mail } from 'lucide-react';
               rel="noopener noreferrer"
               class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
             >
-              <svg
-                viewBox="0 0 24 24"
-                class="h-5 w-5"
-                fill="currentColor"
-              >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                ></path>
               </svg>
             </a>
           </div>

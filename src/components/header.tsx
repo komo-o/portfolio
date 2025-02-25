@@ -1,17 +1,17 @@
-import { Home, User, FolderGit2, Menu } from "lucide-react"
-import { ThemeToggle } from "./theme-toggle"
+import { Home, User, FolderGit2, Menu } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "./ui/navigation-menu"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet"
-import { useState } from "react"
-import { Button } from "./ui/button"
+} from "./ui/navigation-menu";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { useState } from "react";
+import { Button } from "./ui/button";
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b bg-white dark:bg-background shadow-md">
@@ -59,7 +59,7 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            
+
             {/* Mobile Navigation */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="md:hidden">
@@ -72,7 +72,10 @@ export function Header() {
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] bg-white dark:bg-background sm:w-[400px]">
+              <SheetContent
+                side="right"
+                className="w-[300px] bg-white dark:bg-background sm:w-[400px]"
+              >
                 <SheetHeader>
                   <SheetTitle>Navigation</SheetTitle>
                 </SheetHeader>
@@ -108,5 +111,5 @@ export function Header() {
         </div>
       </nav>
     </header>
-  )
+  );
 }
