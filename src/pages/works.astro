@@ -75,7 +75,7 @@ import { ExternalLink, Github } from "lucide-react";
               githubUrl: "https://github.com/yourusername/weather-app",
             },
           ].map((project) => (
-            <div class="group relative flex h-[400px] flex-col overflow-hidden rounded-xl border bg-card shadow-lg transition-all duration-300 hover:shadow-xl">
+            <div class="group relative flex h-[400px] flex-col overflow-hidden rounded-xl border bg-card shadow-lg">
               <div class="aspect-video">
                 <img src={project.image} alt={project.title} class="h-full w-full object-cover" />
               </div>
@@ -87,7 +87,7 @@ import { ExternalLink, Github } from "lucide-react";
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:opacity-80 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
                     aria-label="アプリを開く"
                   >
                     <ExternalLink className="h-5 w-5" />
@@ -96,7 +96,7 @@ import { ExternalLink, Github } from "lucide-react";
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:opacity-80 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
                     aria-label="ソースコードを見る"
                   >
                     <Github className="h-5 w-5" />
