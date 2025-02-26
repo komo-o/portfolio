@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Header } from "@/components/common/header/header";
-import Footer from "@/components/common/footer.astro";
+import Header from "@/components/header.astro";
+import Footer from "@/components/footer.astro";
 import { ExternalLink, Github } from "lucide-react";
 ---
 
@@ -87,7 +87,7 @@ import { ExternalLink, Github } from "lucide-react";
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:opacity-80 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:opacity-70 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
                     aria-label="アプリを開く"
                   >
                     <ExternalLink className="h-5 w-5" />
@@ -96,7 +96,7 @@ import { ExternalLink, Github } from "lucide-react";
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:opacity-80 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:opacity-70 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
                     aria-label="ソースコードを見る"
                   >
                     <Github className="h-5 w-5" />

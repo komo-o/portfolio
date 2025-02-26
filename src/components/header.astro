@@ -1,0 +1,41 @@
+---
+import { Home, User, FolderGit2 } from "lucide-react";
+import { ThemeToggle } from "@/components/header/theme-toggle";
+import { MobileNavigation } from "@/components/header/mobileNavigation";
+import { Link } from "@/components/ui/link";
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 border-b bg-white dark:bg-background shadow-md dark:border-accent"
+>
+  <div class="flex items-center justify-between max-w-7xl px-4 py-4 sm:px-6 lg:px-8 mx-auto">
+    <Link href="/" className="flex items-center gap-2">
+      <Home className="h-6 w-6" />
+      <span class="text-lg font-semibold">Portfolio</span>
+    </Link>
+
+    <div class="flex items-center gap-4">
+      {/* PC Tablet Navigation */}
+      <nav class="hidden md:block">
+        <ul class="flex items-center gap-2">
+          <li class="rounded-lg bg-accent h-10 w-24">
+            <Link href="/about" className="flex justify-center items-center gap-2">
+              <User className="h-4 w-4" />
+              About
+            </Link>
+          </li>
+          <li class="rounded-lg bg-accent h-10 w-24">
+            <Link href="/works" className="flex justify-center items-center gap-2">
+              <FolderGit2 className="h-4 w-4" />
+              Works
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      <ThemeToggle client:load />
+
+      <MobileNavigation client:load />
+    </div>
+  </div>
+</header>
