@@ -35,18 +35,13 @@ import { ArrowRight, Mail } from "lucide-react";
       {/* About Section */}
       <section class="mb-12">
         <a href="/about" class="group block">
-          <div
-            class="relative rounded-xl border bg-card p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:opacity-70"
-          >
+          <div class="relative rounded-xl border bg-card p-8 shadow-lg hover:opacity-70">
             <h2 class="text-3xl font-bold">About Me</h2>
             <p class="mt-4 text-muted-foreground">
               Full-stack developer with expertise in modern web technologies. Passionate about
               creating user-friendly applications and solving complex problems.
             </p>
-            <ArrowRight
-              className="absolute right-8 top-8 h-6 w-6 transition-transform group-hover:translate-x-2 "
-              client:load
-            />
+            <ArrowRight className="absolute right-8 top-8 h-6 w-6" />
           </div>
         </a>
       </section>
@@ -54,14 +49,12 @@ import { ArrowRight, Mail } from "lucide-react";
       {/* Works Section */}
       <section class="mb-12">
         <a href="/works" class="group block">
-          <div
-            class="relative rounded-xl border bg-card p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:opacity-70"
-          >
+          <div class="relative rounded-xl border bg-card p-8 shadow-lg hover:opacity-70">
             <h2 class="text-3xl font-bold">Works</h2>
             <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {
                 [1, 2, 3].map((i) => (
-                  <div class="overflow-hidden rounded-lg border bg-background shadow-md transition-all duration-300 hover:shadow-lg">
+                  <div class="overflow-hidden rounded-lg border bg-background shadow-md">
                     <div class="aspect-video">
                       <img
                         src={`https://images.unsplash.com/photo-1618335829737-2228915674e0?q=80&w=200&auto=format&fit=crop&crop=entropy`}
@@ -79,10 +72,7 @@ import { ArrowRight, Mail } from "lucide-react";
                 ))
               }
             </div>
-            <ArrowRight
-              className="absolute right-8 top-8 h-6 w-6 transition-transform group-hover:translate-x-2"
-              client:load
-            />
+            <ArrowRight className="absolute right-8 top-8 h-6 w-6" />
           </div>
         </a>
       </section>
@@ -97,7 +87,7 @@ import { ArrowRight, Mail } from "lucide-react";
           <div class="mt-6 flex items-center gap-8">
             <a
               href="mailto:your.email@example.com"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:opacity-70 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
             >
               <Mail className="h-5 w-5" client:load />
             </a>
@@ -105,7 +95,7 @@ import { ArrowRight, Mail } from "lucide-react";
               href="https://twitter.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md transition-all duration-300 hover:opacity-70 hover:shadow-lg dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(0,0%,12%)] text-[hsl(39,27%,93%)] shadow-md dark:bg-[hsl(39,27%,93%)] dark:text-[hsl(0,0%,12%)]"
             >
               <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
                 <path

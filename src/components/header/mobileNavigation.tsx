@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, Home, User, FolderGit2 } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Link } from "@/components/ui/link";
+import { a } from "@/components/ui/a";
 
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,29 +20,29 @@ export function MobileNavigation() {
       >
         <SheetHeader>
           <SheetTitle className="text-left h-8">
-            <Link href="/" className="inline-flex items-center gap-2 hover:opacity-70">
+            <a href="/" className="inline-flex items-center gap-2 hover:opacity-70">
               <Home className="h-6 w-6" />
               <span className="text-lg font-semibold">Portfolio</span>
-            </Link>
+            </a>
           </SheetTitle>
         </SheetHeader>
         <nav className="mt-8 flex flex-col gap-4">
-          <Link
+          <a
             href="/about"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-2 rounded-lg bg-accent p-4 text-sm font-medium hover:opacity-70"
           >
             <User className="h-4 w-4" />
             About
-          </Link>
-          <Link
+          </a>
+          <a
             href="/works"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-2 rounded-lg bg-accent p-4 text-sm font-medium hover:opacity-70"
           >
             <FolderGit2 className="h-4 w-4" />
             Works
-          </Link>
+          </a>
         </nav>
       </SheetContent>
     </Sheet>
