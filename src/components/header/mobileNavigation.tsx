@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Menu, Home, User, FolderGit2 } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { a } from "@/components/ui/a";
 
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
