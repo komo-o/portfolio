@@ -8,22 +8,23 @@ import { Moon, Sun } from 'lucide-astro';
 </button>
 
 <script>
-  const Theme = {
+  const THEME = {
     DARK: 'dark',
     LIGHT: 'light',
   } as const;
-  type ThemeType = (typeof Theme)[keyof typeof Theme];
+
+  type ThemeLiteral = (typeof THEME)[keyof typeof THEME];
 
   const getThemePreference = () => {
     const savedTheme = localStorage.getItem('theme');
     if (typeof localStorage !== 'undefined' && savedTheme) {
-      return savedTheme as ThemeType;
+      return savedTheme as ThemeLiteral;
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? Theme.DARK : Theme.LIGHT;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? THEME.DARK : THEME.LIGHT;
   };
 
-  const setTheme = (theme: ThemeType) => {
-    document.documentElement.classList.toggle('dark', theme === Theme.DARK);
+  const setTheme = (theme: ThemeLiteral) => {
+    document.documentElement.classList.toggle('dark', theme === THEME.DARK);
     localStorage.setItem('theme', theme);
   };
 
@@ -31,6 +32,6 @@ import { Moon, Sun } from 'lucide-astro';
 
   document.getElementById('theme-toggle')?.addEventListener('click', () => {
     const isDark = document.documentElement.classList.contains('dark');
-    setTheme(isDark ? Theme.LIGHT : Theme.DARK);
+    setTheme(isDark ? THEME.LIGHT : THEME.DARK);
   });
 </script>
