@@ -1,0 +1,81 @@
+---
+const skills = [
+  {
+    category: "フロントエンド",
+    items: [
+      { name: "HTML/CSS", experience: "5年", professional: true },
+      { name: "JavaScript", experience: "4年", professional: true },
+      { name: "TypeScript", experience: "3年", professional: true },
+      { name: "React", experience: "3年", professional: true },
+      { name: "Vue.js", experience: "2年", professional: true },
+    ]
+  },
+  {
+    category: "バックエンド",
+    items: [
+      { name: "Node.js", experience: "3年", professional: true },
+      { name: "Express", experience: "3年", professional: true },
+      { name: "Python", experience: "2年", professional: false },
+      { name: "SQL", experience: "3年", professional: true },
+      { name: "GraphQL", experience: "1年", professional: true },
+    ]
+  },
+  {
+    category: "その他",
+    items: [
+      { name: "Git", experience: "4年", professional: true },
+      { name: "Docker", experience: "2年", professional: true },
+      { name: "AWS", experience: "1年", professional: false },
+      { name: "UI/UX Design", experience: "2年", professional: true },
+      { name: "Agile/Scrum", experience: "3年", professional: true },
+    ]
+  }
+];
+---
+
+<section id="skills" class="py-20 bg-secondary">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">スキル</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        私が習得したスキルと技術のリストです。常に新しい技術を学び、スキルを向上させることに情熱を持っています。
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {skills.map((skillGroup) => (
+        <div 
+          class="bg-card rounded-xl shadow-md p-6 border border-border/50 hover:shadow-lg transition-shadow" 
+        >
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+              {skillGroup.category === "フロントエンド" && "F"}
+              {skillGroup.category === "バックエンド" && "B"}
+              {skillGroup.category === "その他" && "O"}
+            </div>
+            <h3 class="text-xl font-semibold text-primary">{skillGroup.category}</h3>
+          </div>
+          <div class="space-y-4">
+            {skillGroup.items.map(skill => (
+              <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-secondary/70 transition-colors">
+                <div>
+                  <span class="font-medium block">{skill.name}</span>
+                  <div class="flex items-center mt-1 flex-wrap gap-2">
+                    <span class="text-sm text-muted-foreground">
+                      {skill.experience}
+                    </span>
+                    {skill.professional ? (
+                      <span class="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded-full">実務経験あり</span>
+                    ) : (
+                      <span class="px-2 py-0.5 bg-secondary text-muted-foreground text-xs rounded-full">個人開発</span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

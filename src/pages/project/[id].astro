@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { projects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project, index) => ({
+    params: { id: index.toString() },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={`${project.title} | ポートフォリオ`}>
+  <Navbar />
+  
+  <main class="pt-24 pb-20">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="mb-8">
+        <span class="text-sm text-muted-foreground">{project.year}</span>
+        <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4">{project.title}</h1>
+        <div class="flex flex-wrap gap-2 mb-6">
+          {project.tags.map(tag => (
+            <span class="px-3 py-1 bg-secondary rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl overflow-hidden shadow-md mb-10 border border-border/50">
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          class="w-full h-[300px] md:h-[400px] object-cover"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="md:col-span-2">
+          <h2 class="text-xl font-bold mb-4 text-primary">プロジェクト概要</h2>
+          <p class="text-muted-foreground mb-6">{project.description}</p>
+          <p class="text-muted-foreground mb-6">
+            このプロジェクトでは、ユーザー体験を向上させるために最新のウェブ技術を活用しました。
+            レスポンシブデザインを採用し、あらゆるデバイスで最適な表示を実現しています。
+            また、パフォーマンスの最適化にも注力し、高速な読み込み時間を実現しました。
+          </p>
+          
+          <h2 class="text-xl font-bold mb-4 text-primary">主な機能</h2>
+          <ul class="list-disc list-inside space-y-2 text-muted-foreground mb-6">
+            <li>レスポンシブデザイン</li>
+            <li>高速なパフォーマンス</li>
+            <li>直感的なユーザーインターフェース</li>
+            <li>アクセシビリティ対応</li>
+            <li>SEO最適化</li>
+          </ul>
+        </div>
+
+        <div class="bg-secondary/30 p-6 rounded-xl border border-border/50">
+          <h2 class="text-xl font-bold mb-4 text-primary">プロジェクト情報</h2>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-medium text-sm text-muted-foreground">完成日</h3>
+              <p>{project.year}</p>
+            </div>
+            <div>
+              <h3 class="font-medium text-sm text-muted-foreground">カテゴリー</h3>
+              <p>{project.tags[0]}</p>
+            </div>
+            <div>
+              <h3 class="font-medium text-sm text-muted-foreground">使用技術</h3>
+              <div class="flex flex-wrap gap-2 mt-2">
+                {project.tags.map(tag => (
+                  <span class="px-3 py-1 bg-background rounded-full text-sm">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 class="font-medium text-sm text-muted-foreground">役割</h3>
+              <p>フルスタック開発者</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-xl font-bold mb-4 text-primary">開発プロセス</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-card p-6 rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-shadow">
+            <h3 class="font-bold mb-2">企画・設計</h3>
+            <p class="text-muted-foreground">
+              ユーザーのニーズを理解するためのリサーチを行い、それに基づいてワイヤーフレームとプロトタイプを作成しました。
+              ユーザーフィードバックを取り入れながら、デザインを改善していきました。
+            </p>
+          </div>
+          <div class="bg-card p-6 rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-shadow">
+            <h3 class="font-bold mb-2">開発</h3>
+            <p class="text-muted-foreground">
+              モダンな開発ツールとフレームワークを使用して、効率的な開発を行いました。
+              コンポーネントベースのアプローチを採用し、再利用可能なコードを作成しました。
+            </p>
+          </div>
+          <div class="bg-card p-6 rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-shadow">
+            <h3 class="font-bold mb-2">テスト</h3>
+            <p class="text-muted-foreground">
+              ユニットテストと統合テストを実施し、アプリケーションの品質を確保しました。
+              さまざまなデバイスとブラウザでの互換性テストも行いました。
+            </p>
+          </div>
+          <div class="bg-card p-6 rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-shadow">
+            <h3 class="font-bold mb-2">デプロイ</h3>
+            <p class="text-muted-foreground">
+              CI/CDパイプラインを構築し、自動化されたデプロイプロセスを実現しました。
+              パフォーマンスモニタリングとエラー追跡を導入し、継続的な改善を行っています。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/projects" class="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg shadow-lg hover:opacity-90 transition-opacity inline-block">
+          プロジェクト一覧に戻る
+        </a>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>

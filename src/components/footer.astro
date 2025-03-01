@@ -1,7 +1,13 @@
 ---
-
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="py-6 text-center text-sm text-muted-foreground">
-  <p>© {new Date().getFullYear()} Your Name</p>
+<footer class="bg-card text-card-foreground py-12">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center">
+      <p class="text-muted-foreground">
+        © {currentYear} Portfolio.
+      </p>
+    </div>
+  </div>
 </footer>

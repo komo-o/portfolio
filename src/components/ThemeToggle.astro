@@ -1,0 +1,41 @@
+---
+---
+
+<button id="theme-toggle" class="p-2 rounded-lg bg-card text-card-foreground hover:bg-muted transition-colors" aria-label="Toggle dark mode">
+  <!-- Sun icon for dark mode -->
+  <span id="sun-icon" class="h-5 w-5 hidden dark:block">☀️</span>
+  
+  <!-- Moon icon for light mode -->
+  <span id="moon-icon" class="h-5 w-5 block dark:hidden">🌙</span>
+</button>
+
+<script>
+  // Check for saved theme preference or use system preference
+  const getThemePreference = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  // Apply the theme
+  const setTheme = (theme) => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  };
+
+  // Initialize theme
+  setTheme(getThemePreference());
+
+  // Toggle theme
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  });
+</script>

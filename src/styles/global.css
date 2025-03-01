@@ -57,6 +57,7 @@
     --chart-5: 340 75% 55%;
   }
 }
+
 @layer base {
   * {
     @apply border-border;
@@ -64,4 +65,27 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+}
+
+.gradient-text {
+  @apply text-primary;
+}
+
+.gradient-bg {
+  @apply bg-primary text-primary-foreground;
 }
