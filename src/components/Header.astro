@@ -1,5 +1,6 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
+import { Menu, X } from 'lucide-astro';
+import ThemeToggle from '@/components/ThemeToggle.astro';
 
 const navItems = [
   { name: 'Home', url: '/' },
@@ -33,19 +34,8 @@ const navItems = [
       <ThemeToggle />
 
       <button id="mobile-menu-button" class="text-foreground md:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="h-6 w-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-        </svg>
+        <Menu id="mobile-menu-icon" class="h-6 w-6" />
+        <X id="mobile-menu-icon-close" class="hidden h-6 w-6" />
       </button>
     </div>
   </div>
@@ -71,13 +61,16 @@ const navItems = [
 <script>
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+  const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
 
-  if (mobileMenuButton && mobileMenu) {
+  if (mobileMenuButton && mobileMenu && mobileMenuIcon && mobileMenuIconClose) {
     mobileMenuButton.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+      mobileMenuIcon.classList.toggle('hidden');
+      mobileMenuIconClose.classList.toggle('hidden');
     });
 
-    // Close menu when clicking on a link
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {

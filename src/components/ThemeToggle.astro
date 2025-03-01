@@ -1,46 +1,36 @@
 ---
-
+import { Moon, Sun } from 'lucide-astro';
 ---
 
-<button
-  id="theme-toggle"
-  class="rounded-lg bg-card p-2 text-card-foreground transition-colors hover:bg-muted"
-  aria-label="Toggle dark mode"
->
-  <!-- Sun icon for dark mode -->
-  <span id="sun-icon" class="hidden h-5 w-5 dark:block">☀️</span>
-
-  <!-- Moon icon for light mode -->
-  <span id="moon-icon" class="block h-5 w-5 dark:hidden">🌙</span>
+<button id="theme-toggle" class="rounded-lg bg-accent p-2" aria-label="Toggle dark mode">
+  <Sun id="sun-icon" class="hidden h-5 w-5 dark:block" />
+  <Moon id="moon-icon" class="h-5 w-5 dark:hidden" />
 </button>
 
 <script>
-  // Check for saved theme preference or use system preference
+  const Theme = {
+    DARK: 'dark',
+    LIGHT: 'light',
+  } as const;
+  type ThemeType = (typeof Theme)[keyof typeof Theme];
+
   const getThemePreference = () => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme');
+    if (typeof localStorage !== 'undefined' && savedTheme) {
+      return savedTheme as ThemeType;
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? Theme.DARK : Theme.LIGHT;
   };
 
-  // Apply the theme
-  const setTheme = (theme) => {
-    const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
+  const setTheme = (theme: ThemeType) => {
+    document.documentElement.classList.toggle('dark', theme === Theme.DARK);
     localStorage.setItem('theme', theme);
   };
 
-  // Initialize theme
   setTheme(getThemePreference());
 
-  // Toggle theme
   document.getElementById('theme-toggle')?.addEventListener('click', () => {
-    const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
+    const isDark = document.documentElement.classList.contains('dark');
+    setTheme(isDark ? Theme.LIGHT : Theme.DARK);
   });
 </script>
