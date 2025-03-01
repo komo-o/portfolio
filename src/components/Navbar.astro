@@ -1,5 +1,5 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
+import ThemeToggle from "./ThemeToggle.astro";
 
 const navItems = [
   { name: "ホーム", url: "/" },
@@ -11,68 +11,74 @@ const navItems = [
 <header class="fixed w-full bg-background/80 backdrop-blur-sm z-50 shadow-sm">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
     <a href="/" class="text-xl font-bold text-primary flex items-center gap-2">
-      <span class="bg-primary text-primary-foreground p-1.5 rounded-md">P</span>
       <span>Portfolio</span>
     </a>
-    
+
     <div class="flex items-center gap-4">
       <nav class="hidden md:block">
         <ul class="flex space-x-6">
-          {navItems.map((item) => (
-            <li>
-              <a 
-                href={item.url} 
-                class="text-foreground hover:text-primary transition-colors"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
+          {
+            navItems.map((item) => (
+              <li>
+                <a href={item.url} class="text-foreground hover:text-primary transition-colors">
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
-      
+
       <ThemeToggle />
-      
+
       <button id="mobile-menu-button" class="md:hidden text-foreground">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
         </svg>
       </button>
     </div>
   </div>
-  
+
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden bg-background shadow-md">
+  <div id="mobile-menu" class="md:hidden hidden shadow-md">
     <ul class="container mx-auto px-4 py-2">
-      {navItems.map((item) => (
-        <li class="py-2">
-          <a 
-            href={item.url} 
-            class="block text-foreground hover:text-primary transition-colors"
-          >
-            {item.name}
-          </a>
-        </li>
-      ))}
+      {
+        navItems.map((item) => (
+          <li class="py-2">
+            <a href={item.url} class="block text-foreground hover:text-primary transition-colors">
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </header>
 
 <script>
-  // Mobile menu toggle
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
   if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
-    
+
     // Close menu when clicking on a link
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
       });
     });
   }
