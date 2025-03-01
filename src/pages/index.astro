@@ -8,37 +8,39 @@ import Footer from '../components/Footer.astro';
 <Layout title="ポートフォリオ | Web開発者">
   <Navbar />
   <Hero />
-  
-  <section class="py-16 md:py-20 bg-secondary/30">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <div class="bg-card rounded-xl p-6 md:p-8 shadow-md border border-border/50">
-        <h2 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 text-primary">自己紹介</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+  <section class="bg-secondary/30 py-16 md:py-20">
+    <div class="container mx-auto max-w-6xl px-4">
+      <div class="rounded-xl border border-border/50 bg-card p-6 shadow-md md:p-8">
+        <h2 class="mb-4 text-xl font-bold text-primary md:mb-6 md:text-2xl lg:text-3xl">
+          自己紹介
+        </h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           <div>
-            <p class="text-sm md:text-base text-muted-foreground mb-4">
+            <p class="mb-4 text-sm text-muted-foreground md:text-base">
               はじめまして、Webエンジニアとして5年以上の経験を持つ開発者です。フロントエンドからバックエンドまで幅広い技術スタックを扱い、ユーザー体験を重視した開発を心がけています。
             </p>
-            <p class="text-sm md:text-base text-muted-foreground mb-4">
+            <p class="mb-4 text-sm text-muted-foreground md:text-base">
               React、TypeScript、Node.jsを中心に、モダンな開発環境でのアプリケーション構築に強みを持っています。常に新しい技術を学び、より良いソリューションを提供することに情熱を持っています。
             </p>
           </div>
           <div>
-            <h3 class="text-lg md:text-xl font-semibold mb-3">得意分野</h3>
-            <ul class="space-y-2 text-sm md:text-base text-muted-foreground">
+            <h3 class="mb-3 text-lg font-semibold md:text-xl">得意分野</h3>
+            <ul class="space-y-2 text-sm text-muted-foreground md:text-base">
               <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
+                <span class="h-2 w-2 rounded-full bg-primary"></span>
                 <span>モダンなフロントエンド開発（React, Vue.js）</span>
               </li>
               <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
+                <span class="h-2 w-2 rounded-full bg-primary"></span>
                 <span>レスポンシブWebデザイン</span>
               </li>
               <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
+                <span class="h-2 w-2 rounded-full bg-primary"></span>
                 <span>バックエンド開発（Node.js, Express）</span>
               </li>
               <li class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-primary rounded-full"></span>
+                <span class="h-2 w-2 rounded-full bg-primary"></span>
                 <span>パフォーマンス最適化</span>
               </li>
             </ul>
@@ -47,77 +49,143 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </section>
-  
-  <section class="py-12 md:py-16 bg-background">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <div class="text-center mb-8 md:mb-10">
-        <h2 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-primary">Links</h2>
-        <p class="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+
+  <section class="bg-background py-12 md:py-16">
+    <div class="container mx-auto max-w-6xl px-4">
+      <div class="mb-8 text-center md:mb-10">
+        <h2 class="mb-3 text-xl font-bold text-primary md:mb-4 md:text-2xl lg:text-3xl">Links</h2>
+        <p class="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base">
           SNSやその他のプラットフォームでもつながりましょう
         </p>
       </div>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        <a 
-          href="https://github.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-card rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-all hover:scale-105"
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 rounded-xl border border-border/50 bg-card px-4 py-3 shadow-sm transition-all hover:scale-105 hover:shadow-md md:px-6 md:py-4"
         >
-          <div class="w-8 h-8 md:w-10 md:h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary md:h-10 md:w-10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github"
+              ><path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
+            >
           </div>
           <div>
-            <span class="font-medium block text-sm md:text-base">GitHub</span>
-            <span class="text-xs md:text-sm text-muted-foreground">コードとプロジェクト</span>
+            <span class="block text-sm font-medium md:text-base">GitHub</span>
+            <span class="text-xs text-muted-foreground md:text-sm">コードとプロジェクト</span>
           </div>
         </a>
-        
-        <a 
-          href="https://twitter.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-card rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-all hover:scale-105"
+
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 rounded-xl border border-border/50 bg-card px-4 py-3 shadow-sm transition-all hover:scale-105 hover:shadow-md md:px-6 md:py-4"
         >
-          <div class="w-8 h-8 md:w-10 md:h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary md:h-10 md:w-10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-twitter"
+              ><path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+              ></path></svg
+            >
           </div>
           <div>
-            <span class="font-medium block text-sm md:text-base">Twitter</span>
-            <span class="text-xs md:text-sm text-muted-foreground">最新の投稿とつぶやき</span>
+            <span class="block text-sm font-medium md:text-base">Twitter</span>
+            <span class="text-xs text-muted-foreground md:text-sm">最新の投稿とつぶやき</span>
           </div>
         </a>
-        
-        <a 
-          href="https://linkedin.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-card rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-all hover:scale-105"
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 rounded-xl border border-border/50 bg-card px-4 py-3 shadow-sm transition-all hover:scale-105 hover:shadow-md md:px-6 md:py-4"
         >
-          <div class="w-8 h-8 md:w-10 md:h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary md:h-10 md:w-10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-linkedin"
+              ><path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"
+              ></circle></svg
+            >
           </div>
           <div>
-            <span class="font-medium block text-sm md:text-base">LinkedIn</span>
-            <span class="text-xs md:text-sm text-muted-foreground">プロフェッショナルネットワーク</span>
+            <span class="block text-sm font-medium md:text-base">LinkedIn</span>
+            <span class="text-xs text-muted-foreground md:text-sm"
+              >プロフェッショナルネットワーク</span
+            >
           </div>
         </a>
-        
-        <a 
-          href="mailto:contact@example.com" 
-          class="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-card rounded-xl shadow-sm border border-border/50 hover:shadow-md transition-all hover:scale-105"
+
+        <a
+          href="mailto:contact@example.com"
+          class="flex items-center gap-3 rounded-xl border border-border/50 bg-card px-4 py-3 shadow-sm transition-all hover:scale-105 hover:shadow-md md:px-6 md:py-4"
         >
-          <div class="w-8 h-8 md:w-10 md:h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary md:h-10 md:w-10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-mail"
+              ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
+                d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+            >
           </div>
           <div>
-            <span class="font-medium block text-sm md:text-base">Email</span>
-            <span class="text-xs md:text-sm text-muted-foreground">contact@example.com</span>
+            <span class="block text-sm font-medium md:text-base">Email</span>
+            <span class="text-xs text-muted-foreground md:text-sm">contact@example.com</span>
           </div>
         </a>
       </div>
     </div>
   </section>
-  
+
   <Footer />
 </Layout>

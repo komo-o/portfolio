@@ -1,80 +1,76 @@
 ---
 const experiences = [
   {
-    title: "シニアフロントエンド開発者",
-    company: "テックイノベーション株式会社",
-    location: "東京",
-    period: "2022年4月 - 現在",
-    description: "大規模なSPAの開発とメンテナンス。React、TypeScript、GraphQLを使用したフロントエンド開発。ジュニア開発者のメンタリングとコードレビュー。",
-    skills: ["React", "TypeScript", "GraphQL", "Jest", "CI/CD"]
+    title: 'シニアフロントエンド開発者',
+    company: 'テックイノベーション株式会社',
+    location: '東京',
+    period: '2022年4月 - 現在',
+    description:
+      '大規模なSPAの開発とメンテナンス。React、TypeScript、GraphQLを使用したフロントエンド開発。ジュニア開発者のメンタリングとコードレビュー。',
+    skills: ['React', 'TypeScript', 'GraphQL', 'Jest', 'CI/CD'],
   },
   {
-    title: "ウェブ開発者",
-    company: "デジタルソリューションズ株式会社",
-    location: "大阪",
-    period: "2019年7月 - 2022年3月",
-    description: "複数のクライアントプロジェクトでのフルスタック開発。Vue.js、Node.js、MySQLを使用したウェブアプリケーション開発。レスポンシブデザインとパフォーマンス最適化。",
-    skills: ["Vue.js", "Node.js", "MySQL", "Webpack", "Docker"]
+    title: 'ウェブ開発者',
+    company: 'デジタルソリューションズ株式会社',
+    location: '大阪',
+    period: '2019年7月 - 2022年3月',
+    description:
+      '複数のクライアントプロジェクトでのフルスタック開発。Vue.js、Node.js、MySQLを使用したウェブアプリケーション開発。レスポンシブデザインとパフォーマンス最適化。',
+    skills: ['Vue.js', 'Node.js', 'MySQL', 'Webpack', 'Docker'],
   },
   {
-    title: "フロントエンド開発インターン",
-    company: "スタートアップテクノロジー",
-    location: "福岡",
-    period: "2018年1月 - 2019年6月",
-    description: "UIコンポーネントの開発とテスト。HTML、CSS、JavaScriptを使用したウェブサイト開発。デザインチームとの協力。",
-    skills: ["HTML/CSS", "JavaScript", "jQuery", "Sass", "Git"]
-  }
+    title: 'フロントエンド開発インターン',
+    company: 'スタートアップテクノロジー',
+    location: '福岡',
+    period: '2018年1月 - 2019年6月',
+    description:
+      'UIコンポーネントの開発とテスト。HTML、CSS、JavaScriptを使用したウェブサイト開発。デザインチームとの協力。',
+    skills: ['HTML/CSS', 'JavaScript', 'jQuery', 'Sass', 'Git'],
+  },
 ];
 ---
 
-<section id="experience" class="py-16 md:py-20 bg-background">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <div class="text-center mb-10 md:mb-16">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">職務経歴</h2>
-      <p class="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+<section id="experience" class="bg-background py-16 md:py-20">
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="mb-10 text-center md:mb-16">
+      <h2 class="mb-3 text-2xl font-bold md:mb-4 md:text-3xl lg:text-4xl">職務経歴</h2>
+      <p class="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base">
         これまでの職務経験と、各ポジションで担当したプロジェクトや習得したスキルの概要です。
       </p>
     </div>
-    
-    <div class="relative border-l-2 border-primary ml-3 md:ml-0 md:mx-auto max-w-3xl pl-6 md:pl-0">
-      {experiences.map((exp) => (
-        <div 
-          class="mb-10 md:mb-12 md:grid md:grid-cols-5 md:gap-6 md:gap-8 relative" 
-        >
-          <!-- Timeline dot -->
-          <div class="absolute -left-[9px] md:static md:flex md:justify-end">
-            <div class="w-4 h-4 md:w-5 md:h-5 rounded-full bg-primary absolute top-0 md:static md:mt-1.5"></div>
-          </div>
-          
-          <!-- Date -->
-          <div class="md:col-span-1 md:text-right mb-2 md:mb-0 md:pr-4 md:pt-0.5">
-            <span class="text-xs md:text-sm text-muted-foreground">
-              {exp.period}
-            </span>
-          </div>
-          
-          <!-- Content -->
-          <div class="md:col-span-4 bg-card p-4 md:p-5 rounded-lg shadow-sm border border-border/50 hover:shadow-md transition-shadow">
-            <h3 class="text-lg md:text-xl font-bold">{exp.title}</h3>
-            <div class="flex flex-wrap items-center gap-x-3 md:gap-x-4 gap-y-1 md:gap-y-2 mb-2">
-              <p class="text-primary font-medium text-sm md:text-base">
-                {exp.company}
-              </p>
-              <p class="text-muted-foreground text-xs md:text-sm">
-                {exp.location}
-              </p>
+
+    <div class="relative ml-3 max-w-3xl border-l-2 border-primary pl-6 md:mx-auto md:ml-0 md:pl-0">
+      {
+        experiences.map((exp) => (
+          <div class="relative mb-10 md:mb-12 md:grid md:grid-cols-5 md:gap-6 md:gap-8">
+            <div class="absolute -left-[9px] md:static md:flex md:justify-end">
+              <div class="absolute top-0 h-4 w-4 rounded-full bg-primary md:static md:mt-1.5 md:h-5 md:w-5" />
             </div>
-            <p class="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">{exp.description}</p>
-            <div class="flex flex-wrap gap-1.5 md:gap-2">
-              {exp.skills.map(skill => (
-                <span class="px-2 py-0.5 md:px-3 md:py-1 bg-secondary rounded-full text-xs md:text-sm">
-                  {skill}
-                </span>
-              ))}
+
+            <div class="mb-2 md:col-span-1 md:mb-0 md:pr-4 md:pt-0.5 md:text-right">
+              <span class="text-xs text-muted-foreground md:text-sm">{exp.period}</span>
+            </div>
+
+            <div class="rounded-lg border border-border/50 bg-card p-4 shadow-sm transition-shadow hover:shadow-md md:col-span-4 md:p-5">
+              <h3 class="text-lg font-bold md:text-xl">{exp.title}</h3>
+              <div class="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 md:gap-x-4 md:gap-y-2">
+                <p class="text-sm font-medium text-primary md:text-base">{exp.company}</p>
+                <p class="text-xs text-muted-foreground md:text-sm">{exp.location}</p>
+              </div>
+              <p class="mb-3 text-sm text-muted-foreground md:mb-4 md:text-base">
+                {exp.description}
+              </p>
+              <div class="flex flex-wrap gap-1.5 md:gap-2">
+                {exp.skills.map((skill) => (
+                  <span class="rounded-full bg-secondary px-2 py-0.5 text-xs md:px-3 md:py-1 md:text-sm">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>

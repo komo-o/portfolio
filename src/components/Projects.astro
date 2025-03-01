@@ -3,43 +3,45 @@ import { projects } from '../data/projects';
 ---
 
 <section id="projects" class="py-16 md:py-20">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      {projects.map((project) => (
-        <div 
-          class="bg-card rounded-xl overflow-hidden shadow-md border border-border/50 transition-all hover:shadow-lg hover:scale-[1.02]" 
-        >
-          <div class="relative">
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              class="w-full h-48 md:h-60 object-cover"
-            />
-            <div class="absolute top-3 right-3 md:top-4 md:right-4">
-              <span class="px-2 py-0.5 md:px-3 md:py-1 bg-card/80 backdrop-blur-sm rounded-full text-xs font-medium">
-                {project.year}
-              </span>
-            </div>
-          </div>
-          <div class="p-4 md:p-6">
-            <h3 class="text-lg md:text-xl font-bold mb-2">{project.title}</h3>
-            <p class="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 line-clamp-3">{project.description}</p>
-            <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-              {project.tags.map(tag => (
-                <span class="px-2 py-0.5 md:px-3 md:py-1 bg-secondary rounded-full text-xs md:text-sm">
-                  {tag}
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+      {
+        projects.map((project) => (
+          <div class="overflow-hidden rounded-xl border border-border/50 bg-card shadow-md transition-all hover:scale-[1.02] hover:shadow-lg">
+            <div class="relative">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="h-48 w-full object-cover md:h-60"
+              />
+              <div class="absolute right-3 top-3 md:right-4 md:top-4">
+                <span class="rounded-full bg-card/80 px-2 py-0.5 text-xs font-medium backdrop-blur-sm md:px-3 md:py-1">
+                  {project.year}
                 </span>
-              ))}
+              </div>
             </div>
-            <a 
-              href={`/project/${projects.indexOf(project)}`} 
-              class="inline-flex items-center gap-1 text-primary font-medium hover:underline text-sm md:text-base"
-            >
-              詳細を見る →
-            </a>
+            <div class="p-4 md:p-6">
+              <h3 class="mb-2 text-lg font-bold md:text-xl">{project.title}</h3>
+              <p class="mb-3 line-clamp-3 text-sm text-muted-foreground md:mb-4 md:text-base">
+                {project.description}
+              </p>
+              <div class="mb-3 flex flex-wrap gap-1.5 md:mb-4 md:gap-2">
+                {project.tags.map((tag) => (
+                  <span class="rounded-full bg-secondary px-2 py-0.5 text-xs md:px-3 md:py-1 md:text-sm">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <a
+                href={`/project/${projects.indexOf(project)}`}
+                class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline md:text-base"
+              >
+                詳細を見る →
+              </a>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>

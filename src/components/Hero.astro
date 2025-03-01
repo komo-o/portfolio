@@ -1,43 +1,48 @@
 ---
+
 ---
 
-<section id="home" class="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/30">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <div class="flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-8 md:mb-0">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+<section id="home" class="bg-gradient-to-b from-background to-secondary/30 py-16 md:py-24">
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="flex flex-col items-center md:flex-row">
+      <div class="mb-8 md:mb-0 md:w-1/2">
+        <h1 class="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
           こんにちは、<br />
           <span class="text-primary">Web開発者</span>です
         </h1>
-        <p class="text-base md:text-lg text-muted-foreground mb-6">
+        <p class="mb-6 text-base text-muted-foreground md:text-lg">
           モダンなウェブ技術を使用して、美しく機能的なウェブサイトとアプリケーションを作成します。
         </p>
         <div class="flex flex-wrap gap-3">
-          <a 
-            href="/projects" 
-            class="px-4 py-2 md:px-6 md:py-3 bg-primary text-primary-foreground font-medium rounded-lg shadow-lg hover:opacity-90 transition-opacity text-sm md:text-base"
+          <a
+            href="/projects"
+            class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-opacity hover:opacity-90 md:px-6 md:py-3 md:text-base"
           >
             プロジェクトを見る
           </a>
-          <a 
-            href="/about" 
-            class="px-4 py-2 md:px-6 md:py-3 bg-background text-foreground border border-border font-medium rounded-lg hover:bg-muted transition-colors text-sm md:text-base"
+          <a
+            href="/about"
+            class="rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted md:px-6 md:py-3 md:text-base"
           >
             About Me
           </a>
         </div>
       </div>
-      <div class="md:w-1/2 flex justify-center">
-        <div class="relative w-48 h-48 md:w-72 md:h-72">
-          <div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl"></div>
-          <div class="relative w-full h-full flex items-center justify-center">
-            <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path fill="currentColor" class="text-primary" d="M40.8,-68.7C52.9,-61.5,62.9,-49.7,69.9,-36.2C76.9,-22.7,80.8,-7.5,79.3,7.2C77.8,21.9,70.8,36.1,60.4,46.4C50,56.7,36.1,63.1,21.8,68.1C7.5,73.1,-7.2,76.7,-20.8,73.5C-34.4,70.3,-46.9,60.3,-56.4,48C-65.9,35.7,-72.4,21.1,-74.8,5.6C-77.2,-9.9,-75.5,-26.3,-67.7,-39.2C-59.9,-52.1,-46,-61.5,-32.1,-67.5C-18.2,-73.5,-4.3,-76.1,8.5,-74.1C21.3,-72.1,28.7,-75.9,40.8,-68.7Z" transform="translate(100 100)" />
+      <div class="flex justify-center md:w-1/2">
+        <div class="relative h-48 w-48 md:h-72 md:w-72">
+          <div class="absolute inset-0 rounded-full bg-primary/20 blur-2xl"></div>
+          <div class="relative flex h-full w-full items-center justify-center">
+            <svg class="h-full w-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill="currentColor"
+                class="text-primary"
+                d="M40.8,-68.7C52.9,-61.5,62.9,-49.7,69.9,-36.2C76.9,-22.7,80.8,-7.5,79.3,7.2C77.8,21.9,70.8,36.1,60.4,46.4C50,56.7,36.1,63.1,21.8,68.1C7.5,73.1,-7.2,76.7,-20.8,73.5C-34.4,70.3,-46.9,60.3,-56.4,48C-65.9,35.7,-72.4,21.1,-74.8,5.6C-77.2,-9.9,-75.5,-26.3,-67.7,-39.2C-59.9,-52.1,-46,-61.5,-32.1,-67.5C-18.2,-73.5,-4.3,-76.1,8.5,-74.1C21.3,-72.1,28.7,-75.9,40.8,-68.7Z"
+                transform="translate(100 100)"></path>
             </svg>
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" 
-              alt="Profile" 
-              class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-background"
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+              alt="Profile"
+              class="absolute inset-0 h-full w-full rounded-full border-4 border-background object-cover"
             />
           </div>
         </div>

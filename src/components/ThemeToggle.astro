@@ -1,12 +1,17 @@
 ---
+
 ---
 
-<button id="theme-toggle" class="p-2 rounded-lg bg-card text-card-foreground hover:bg-muted transition-colors" aria-label="Toggle dark mode">
+<button
+  id="theme-toggle"
+  class="rounded-lg bg-card p-2 text-card-foreground transition-colors hover:bg-muted"
+  aria-label="Toggle dark mode"
+>
   <!-- Sun icon for dark mode -->
-  <span id="sun-icon" class="h-5 w-5 hidden dark:block">☀️</span>
-  
+  <span id="sun-icon" class="hidden h-5 w-5 dark:block">☀️</span>
+
   <!-- Moon icon for light mode -->
-  <span id="moon-icon" class="h-5 w-5 block dark:hidden">🌙</span>
+  <span id="moon-icon" class="block h-5 w-5 dark:hidden">🌙</span>
 </button>
 
 <script>
