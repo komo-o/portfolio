@@ -41,21 +41,19 @@ const navItems = [
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden shadow-md md:hidden">
-    <nav>
-      <ul class="container mx-auto px-4 py-2">
-        {
-          navItems.map((item) => (
-            <li class="py-2">
-              <a href={item.url} class="block text-foreground transition-colors hover:text-primary">
-                {item.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </div>
+  <nav id="mobile-menu" class="hidden shadow-md md:hidden">
+    <ul class="container mx-auto px-4 py-2">
+      {
+        navItems.map((item) => (
+          <li class="py-2">
+            <a href={item.url} class="block text-foreground transition-colors hover:text-primary">
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>
 
 <script>
