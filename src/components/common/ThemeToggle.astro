@@ -2,7 +2,11 @@
 import { Moon, Sun } from 'lucide-astro';
 ---
 
-<button id="theme-toggle" class="rounded-lg bg-accent p-2" aria-label="Toggle dark mode">
+<button
+  id="theme-toggle"
+  class="rounded-lg bg-accent p-2 hover:opacity-80"
+  aria-label="Toggle dark mode"
+>
   <Sun id="sun-icon" class="hidden h-5 w-5 dark:block" />
   <Moon id="moon-icon" class="h-5 w-5 dark:hidden" />
 </button>
