@@ -2,15 +2,15 @@
 import ThemeToggle from './ThemeToggle.astro';
 
 const navItems = [
-  { name: 'ホーム', url: '/' },
+  { name: 'Home', url: '/' },
   { name: 'About', url: '/about' },
-  { name: 'プロジェクト', url: '/projects' },
+  { name: 'Projects', url: '/projects' },
 ];
 ---
 
-<header class="fixed z-50 w-full bg-background/80 shadow-sm backdrop-blur-sm">
-  <div class="flex w-full max-w-6xl items-center justify-between py-3 md:px-4">
-    <a href="/" class="flex items-center gap-2 text-xl font-bold text-primary"> Portfolio </a>
+<header class="fixed z-50 w-full bg-background py-3 md:bg-transparent md:backdrop-blur-sm">
+  <div class="mx-auto flex h-9 w-full max-w-6xl items-center justify-between px-4">
+    <a href="/" class="text-xl font-bold text-primary">Komo</a>
 
     <div class="flex items-center gap-4">
       <nav class="hidden md:block">
@@ -18,7 +18,10 @@ const navItems = [
           {
             navItems.map((item) => (
               <li>
-                <a href={item.url} class="text-foreground transition-colors hover:text-primary">
+                <a
+                  href={item.url}
+                  class="relative box-border block text-foreground after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                >
                   {item.name}
                 </a>
               </li>
@@ -49,17 +52,19 @@ const navItems = [
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden shadow-md md:hidden">
-    <ul class="container mx-auto px-4 py-2">
-      {
-        navItems.map((item) => (
-          <li class="py-2">
-            <a href={item.url} class="block text-foreground transition-colors hover:text-primary">
-              {item.name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <nav>
+      <ul class="container mx-auto px-4 py-2">
+        {
+          navItems.map((item) => (
+            <li class="py-2">
+              <a href={item.url} class="block text-foreground transition-colors hover:text-primary">
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
 </header>
 
