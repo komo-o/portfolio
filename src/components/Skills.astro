@@ -34,52 +34,51 @@ const skills = [
 ---
 
 <section id="skills" class="bg-secondary py-16 md:py-20">
-  <div class="container mx-auto max-w-6xl px-4">
+  <div class="container mx-auto max-w-4xl px-4">
     <div class="mb-10 text-center md:mb-16">
       <h2 class="mb-3 text-2xl font-bold md:mb-4 md:text-3xl lg:text-4xl">スキル</h2>
-      <p class="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base">
+      <p class="text-muted-foreground mx-auto max-w-2xl text-sm md:text-base">
         私が習得したスキルと技術のリストです。常に新しい技術を学び、スキルを向上させることに情熱を持っています。
       </p>
     </div>
+    <img src="/src/assets/undraw_hiring_8szx.svg" alt="" srcset="" width="400" height="400" />
+  </div>
 
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-      {
-        skills.map((skillGroup) => (
-          <div class="rounded-xl border border-border/50 bg-card p-5 shadow-md transition-shadow hover:shadow-lg md:p-6">
-            <div class="mb-4 flex items-center gap-2 md:mb-6">
-              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 md:h-10 md:w-10">
-                {skillGroup.category === 'フロントエンド' && 'F'}
-                {skillGroup.category === 'バックエンド' && 'B'}
-                {skillGroup.category === 'その他' && 'O'}
-              </div>
-              <h3 class="text-lg font-semibold md:text-xl">{skillGroup.category}</h3>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+    {
+      skills.map((skillGroup) => (
+        <div class="border-border/50 bg-card rounded-xl border p-5 shadow-md transition-shadow hover:shadow-lg md:p-6">
+          <div class="mb-4 flex items-center gap-2 md:mb-6">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 md:h-10 md:w-10">
+              {skillGroup.category === 'フロントエンド' && 'F'}
+              {skillGroup.category === 'バックエンド' && 'B'}
+              {skillGroup.category === 'その他' && 'O'}
             </div>
-            <div class="space-y-3 md:space-y-4">
-              {skillGroup.items.map((skill) => (
-                <div class="flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-secondary/70 md:p-3">
-                  <div>
-                    <span class="block text-sm font-medium md:text-base">{skill.name}</span>
-                    <div class="mt-1 flex flex-wrap items-center gap-2">
-                      <span class="text-xs text-muted-foreground md:text-sm">
-                        {skill.experience}
+            <h3 class="text-lg font-semibold md:text-xl">{skillGroup.category}</h3>
+          </div>
+          <div class="space-y-3 md:space-y-4">
+            {skillGroup.items.map((skill) => (
+              <div class="flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-secondary/70 md:p-3">
+                <div>
+                  <span class="block text-sm font-medium md:text-base">{skill.name}</span>
+                  <div class="mt-1 flex flex-wrap items-center gap-2">
+                    <span class="text-muted-foreground text-xs md:text-sm">{skill.experience}</span>
+                    {skill.professional ? (
+                      <span class="rounded-full bg-primary/10 px-2 py-0.5 text-xs">
+                        実務経験あり
                       </span>
-                      {skill.professional ? (
-                        <span class="rounded-full bg-primary/10 px-2 py-0.5 text-xs">
-                          実務経験あり
-                        </span>
-                      ) : (
-                        <span class="rounded-full bg-secondary px-2 py-0.5 text-xs text-muted-foreground">
-                          個人開発
-                        </span>
-                      )}
-                    </div>
+                    ) : (
+                      <span class="text-muted-foreground rounded-full bg-secondary px-2 py-0.5 text-xs">
+                        個人開発
+                      </span>
+                    )}
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        ))
-      }
-    </div>
+        </div>
+      ))
+    }
   </div>
 </section>
