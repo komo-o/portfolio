@@ -1,15 +1,14 @@
 // テーマによって画像を切り替えるコンポーネント
-
 import { useSyncExternalStore } from 'react';
 
-type Props = {
-  lightSrc: string;
-  darkSrc: string;
+interface Props {
+  lightThemeImageSrc: string;
+  darkThemeImageSrc: string;
   alt: string;
   width: string;
   height: string;
   className?: string;
-};
+}
 
 const themeStore = {
   subscribe: (callback: () => void) => {
@@ -45,7 +44,14 @@ const themeStore = {
   },
 };
 
-export function ThemedImage({ lightSrc, darkSrc, alt, width, height, className }: Props) {
+export function ThemedImage({
+  lightThemeImageSrc,
+  darkThemeImageSrc,
+  alt,
+  width,
+  height,
+  className,
+}: Props) {
   const theme = useSyncExternalStore(
     themeStore.subscribe,
     themeStore.getSnapshot,
@@ -56,7 +62,7 @@ export function ThemedImage({ lightSrc, darkSrc, alt, width, height, className }
 
   return (
     <img
-      src={isDarkMode ? darkSrc : lightSrc}
+      src={isDarkMode ? darkThemeImageSrc : lightThemeImageSrc}
       alt={alt}
       width={width}
       height={height}

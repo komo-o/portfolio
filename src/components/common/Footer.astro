@@ -1,30 +1,34 @@
 ---
-const currentYear = new Date().getFullYear();
+import { ThemedImage } from '@/components/common/ThemedImage';
 
 const socialLinks = [
   {
     url: 'https://x.com/komo_oooo',
-    logo: '/src/assets/x-logo.png',
+    lightThemeImageSrc: '/src/assets/x-logo-light.png',
+    darkThemeImageSrc: '/src/assets/x-logo-dark.png',
     alt: 'X アカウント',
-    size: 15,
+    size: '15',
   },
   {
     url: 'https://github.com/komo-o',
-    logo: '/src/assets/github-logo.png',
+    lightThemeImageSrc: '/src/assets/github-logo-light.png',
+    darkThemeImageSrc: '/src/assets/github-logo-dark.png',
     alt: 'GitHub アカウント',
-    size: 20,
+    size: '20',
   },
   {
     url: 'https://qiita.com/komo-o',
-    logo: '/src/assets/qiita-logo.png',
+    lightThemeImageSrc: '/src/assets/qiita-logo.png',
+    darkThemeImageSrc: '/src/assets/qiita-logo.png',
     alt: 'Qiita アカウント',
-    size: 20,
+    size: '20',
   },
   {
     url: 'https://zenn.dev/kotaro_k',
-    logo: '/src/assets/zenn-logo.svg',
+    lightThemeImageSrc: '/src/assets/zenn-logo.svg',
+    darkThemeImageSrc: '/src/assets/zenn-logo.svg',
     alt: 'Zenn アカウント',
-    size: 20,
+    size: '20',
   },
 ];
 ---
@@ -41,14 +45,21 @@ const socialLinks = [
               rel="noopener noreferrer"
               class="flex h-full w-full items-center justify-center rounded-full"
             >
-              <img src={link.logo} alt={link.alt} height={link.size} width={link.size} />
+              <ThemedImage
+                client:load
+                lightThemeImageSrc={link.lightThemeImageSrc}
+                darkThemeImageSrc={link.darkThemeImageSrc}
+                alt={link.alt}
+                height={link.size}
+                width={link.size}
+              />
             </a>
           </div>
         ))
       }
     </div>
     <p class="text-muted-foreground text-center text-sm opacity-50">
-      © {currentYear} Komo Portfolio.
+      © {new Date().getFullYear()} Komo Portfolio.
     </p>
   </div>
 </footer>

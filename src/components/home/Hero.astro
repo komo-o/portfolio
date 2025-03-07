@@ -1,13 +1,13 @@
 ---
-
+import { ThemedImage } from '@/components/common/ThemedImage';
 ---
 
 <section class="py-16 md:py-28">
   <div class="mx-auto flex max-w-4xl flex-col-reverse gap-x-3 px-4 sm:flex-row">
     <div class="flex w-full flex-col justify-center text-center sm:text-left">
       <h1 class="mb-2 text-3xl font-bold sm:mb-4 md:text-4xl lg:text-5xl">
-        こんにちは、<br />
-        Web開発者です
+        Hi, I'm<br />
+        Kotaro Komori.
       </h1>
       <p class="text-muted-foreground mb-4 text-base sm:mb-8 md:text-lg">
         モダンなウェブ技術を使用して、美しく機能的なウェブサイトとアプリケーションを作成します。
@@ -27,12 +27,14 @@
       </div>
     </div>
 
-    <img
-      src="/src/assets/hello.svg"
-      alt=""
+    <ThemedImage
+      client:load
+      lightThemeImageSrc="/src/assets/hello-light.svg"
+      darkThemeImageSrc="/src/assets/hello-dark.svg"
+      alt="Hello"
       width="384"
       height="384"
-      class="mx-auto h-60 w-60 md:h-96 md:w-96"
+      className="mx-auto h-60 w-60 md:h-96 md:w-96"
     />
   </div>
 </section>
