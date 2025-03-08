@@ -44,7 +44,7 @@ const themeStore = {
   },
 };
 
-export function ThemedImage({
+function ThemedImage({
   lightThemeImageSrc,
   darkThemeImageSrc,
   alt,
@@ -70,3 +70,5 @@ export function ThemedImage({
     />
   );
 }
+
+export default ThemedImage;
