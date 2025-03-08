@@ -1,31 +1,17 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/common/Header.astro';
-import Skills from '@/components/Skills.astro';
-import Experience from '@/components/Experience.astro';
+import Skills from '@/components/about/Skills.astro';
+import Experience from '@/components/about/Experience.astro';
 import Footer from '@/components/common/Footer.astro';
 ---
 
-<Layout title="About | ポートフォリオ">
+<Layout title="About Me">
   <Header />
-  <div class="bg-gradient-to-b from-background to-secondary/30 pt-20">
-    <div class="container mx-auto max-w-4xl px-4 py-8 md:py-12">
-      <div class="mb-8 text-center md:mb-16">
-        <h1 class="mb-3 text-2xl font-bold md:mb-4 md:text-3xl lg:text-4xl">About Me</h1>
-        <p class="text-muted-foreground mx-auto max-w-2xl text-sm md:text-base">
-          私のスキルと経歴についてご紹介します。
-        </p>
-        <img
-          src="/src/assets/undraw_attached-file_j0t2.svg"
-          alt=""
-          srcset=""
-          width="400"
-          height="400"
-        />
-      </div>
-    </div>
+  <div class="mx-auto mb-4 max-w-4xl bg-background px-4 pt-20 md:mb-14 md:pt-28">
+    <h1 class="text-2xl font-bold md:text-3xl lg:text-4xl">About Me</h1>
   </div>
-  <Skills />
   <Experience />
+  <Skills />
   <Footer />
 </Layout>
