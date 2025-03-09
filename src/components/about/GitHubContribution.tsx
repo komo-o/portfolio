@@ -16,7 +16,7 @@ function GitHubContribution() {
         username="komo-o"
         theme={explicitTheme}
         colorScheme={isDarkMode ? 'dark' : 'light'}
-        fontSize={16}
+        fontSize={14}
         blockSize={12.38}
         style={{ width: '10px' }}
       />
