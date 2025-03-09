@@ -4,18 +4,18 @@ import Header from '@/components/common/Header.astro';
 import Skills from '@/components/about/Skills.astro';
 import Tools from '@/components/about/Tools.astro';
 import Experience from '@/components/about/Experience.astro';
-import Github from '@/components/about/GitHub.astro';
+import Activity from '@/components/about/Activity.astro';
 import Footer from '@/components/common/Footer.astro';
 ---
 
 <Layout title="About Me">
   <Header />
-  <div class="mx-auto mb-8 max-w-4xl bg-background px-4 pt-20 md:mb-14 md:pt-28">
+  <div class="mx-auto mb-8 max-w-4xl bg-background px-4 pt-20 lg:mb-12 lg:pt-24">
     <h1 class="text-3xl font-bold lg:text-4xl">About Me</h1>
   </div>
   <Experience />
   <Skills />
   <Tools />
-  <Github />
+  <Activity />
   <Footer />
 </Layout>
