@@ -5,7 +5,7 @@ export const projects = [
       'React、Node.js、MongoDBを使用した完全なEコマースプラットフォーム。ユーザー認証、商品検索、カート機能、決済処理を実装しました。',
     image:
       'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
-    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
+    tags: ['React', 'Node.js', 'MongoDB', 'Express'],
     link: '#',
     github: '#',
     year: '2023',
