@@ -7,6 +7,8 @@ const navItems = [
   { name: 'About', url: '/about' },
   { name: 'Projects', url: '/projects' },
 ];
+
+const pathname = Astro.url.pathname;
 ---
 
 <header class="fixed z-50 w-full bg-background py-3 md:bg-transparent md:backdrop-blur-sm">
@@ -21,7 +23,9 @@ const navItems = [
               <li>
                 <a
                   href={item.url}
-                  class="relative box-border block text-foreground after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                  class={`box-border block ${
+                    pathname === item.url ? 'border-b-2 border-accent' : 'hover:opacity-60'
+                  }`}
                 >
                   {item.name}
                 </a>
