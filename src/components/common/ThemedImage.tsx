@@ -1,5 +1,5 @@
 // テーマによって画像を切り替えるコンポーネント
-import { useSyncExternalStore } from 'react';
+import useTheme from '@/hooks/useTheme';
 
 interface Props {
   lightThemeImageSrc: string;
@@ -10,40 +10,6 @@ interface Props {
   className?: string;
 }
 
-const themeStore = {
-  subscribe: (callback: () => void) => {
-    if (typeof window === 'undefined') return () => {};
-
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          callback();
-        }
-      });
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  },
-
-  getSnapshot: () => {
-    if (typeof window !== 'undefined') {
-      return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-    }
-    return 'light';
-  },
-
-  getServerSnapshot: () => {
-    return 'light';
-  },
-};
-
 function ThemedImage({
   lightThemeImageSrc,
   darkThemeImageSrc,
@@ -52,11 +18,7 @@ function ThemedImage({
   height,
   className,
 }: Props) {
-  const theme = useSyncExternalStore(
-    themeStore.subscribe,
-    themeStore.getSnapshot,
-    themeStore.getServerSnapshot,
-  );
+  const theme = useTheme();
 
   const isDarkMode = theme === 'dark';
 
