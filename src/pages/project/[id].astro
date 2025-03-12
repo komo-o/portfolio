@@ -98,21 +98,14 @@ const { project } = Astro.props;
         <div class="mb-3 flex items-center justify-center gap-3">
           <a
             href="https://sample.copm"
-            class="flex h-10 w-32 items-center justify-center gap-2 rounded-lg bg-accent font-normal shadow-lg hover:opacity-80 md:font-medium"
+            class="flex h-10 w-32 items-center justify-center gap-2 rounded-lg bg-accent text-white shadow-lg hover:opacity-80"
           >
-            <ThemedImage
-              client:load
-              lightThemeImageSrc="/src/assets/github-icon-light.png"
-              darkThemeImageSrc="/src/assets/github-icon-dark.png"
-              alt="GitHubのロゴ"
-              height="20"
-              width="20"
-            />
+            <img src="/src/assets/github-icon-dark.png" alt="GitHubのロゴ" class="block h-5 w-5" />
             GitHub
           </a>
           <a
             href="https://sample.copm"
-            class="flex h-10 w-32 items-center justify-center gap-2 rounded-lg bg-accent font-normal shadow-lg hover:opacity-80 md:font-medium"
+            class="flex h-10 w-32 items-center justify-center gap-2 rounded-lg bg-accent text-white shadow-lg hover:opacity-80"
           >
             <AppWindow class="h-5 w-5" />
             DEMO
