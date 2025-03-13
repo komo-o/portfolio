@@ -1,35 +1,55 @@
 ---
-import { AppWindow } from 'lucide-astro';
+import { AppWindow, AlertCircle } from 'lucide-astro';
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/common/Header.astro';
 import Footer from '@/components/common/Footer.astro';
-import { projects } from '@/data/projects';
+import { getCollection } from 'astro:content';
 
-export function getStaticPaths() {
-  return projects.map((project, index) => ({
-    params: { id: index.toString() },
-    props: { project },
+export async function getStaticPaths() {
+  const projectEntries = await getCollection('projects');
+  return projectEntries.map((entry, index) => ({
+    params: { id: (index + 1).toString() },
+    props: { project: entry },
   }));
 }
 
 const { project } = Astro.props;
+const {
+  title,
+  isCompleted,
+  imgSrc,
+  imgAlt,
+  description,
+  features,
+  completedDate,
+  developmentTime,
+  tags,
+  tools,
+  githubLink,
+  demoLink,
+} = project.data;
 ---
 
-<Layout title={`${project.title} | ポートフォリオ`}>
+<Layout title={`${title} - プロジェクト詳細`}>
   <Header />
 
-  <main class="mb-20 pt-20 lg:pt-24">
+  <main class="mb-20 pt-20 lg:pt-[88px]">
     <div class="mx-auto max-w-4xl px-4">
       <h1 class="mb-6 text-2xl font-bold md:mb-10 md:text-3xl lg:text-4xl">
-        {project.title}
+        {title}
       </h1>
 
+      {
+        !isCompleted && (
+          <p class="mb-4 flex items-center gap-2 text-sm md:mb-6 md:text-base">
+            <AlertCircle class="inline-block h-5 w-5 text-yellow-500" />
+            現在、開発中のプロジェクトです。
+          </p>
+        )
+      }
+
       <div class="mb-6 overflow-hidden rounded-md shadow-md md:mb-10">
-        <img
-          src={project.image}
-          alt={project.title}
-          class="h-52 w-full object-cover md:h-72 lg:h-96"
-        />
+        <img src={imgSrc} alt={imgAlt} class="h-52 w-full object-cover md:h-72 lg:h-96" />
       </div>
 
       <div class="mb-6 grid grid-cols-1 gap-6 md:mb-10 md:grid-cols-3 md:gap-8">
@@ -39,26 +59,14 @@ const { project } = Astro.props;
           >
             概要
           </h2>
-          <p class="mb-4 text-sm md:mb-6 md:text-base">
-            {project.description}
-          </p>
-          <p class="mb-4 text-sm md:mb-6 md:text-base">
-            このプロジェクトでは、ユーザー体験を向上させるために最新のウェブ技術を活用しました。
-            レスポンシブデザインを採用し、あらゆるデバイスで最適な表示を実現しています。
-            また、パフォーマンスの最適化にも注力し、高速な読み込み時間を実現しました。
-          </p>
-
+          {description.map((desc) => <p class="mb-4 text-sm md:mb-6 md:text-base">{desc}</p>)}
           <h2
             class="mb-3 inline-block border-b-4 border-accent text-lg font-bold md:mb-4 md:text-xl"
           >
             主な機能
           </h2>
           <ul class="list-inside list-disc space-y-1 text-sm md:space-y-2 md:text-base">
-            <li>レスポンシブデザイン</li>
-            <li>高速なパフォーマンス</li>
-            <li>直感的なユーザーインターフェース</li>
-            <li>アクセシビリティ対応</li>
-            <li>SEO最適化</li>
+            {features.map((feature) => <li>{feature}</li>)}
           </ul>
         </div>
 
@@ -67,23 +75,35 @@ const { project } = Astro.props;
           <div class="space-y-3 md:space-y-4">
             <div>
               <h3 class="text-xs md:text-sm">完成日</h3>
-              <p class="text-sm md:text-base">{project.year}</p>
+              <p class="text-sm md:text-base">
+                {completedDate}
+              </p>
             </div>
             <div>
-              <h3 class="text-xs md:text-sm">制作工数</h3>
-              <p class="text-sm md:text-base">1ヶ月</p>
-            </div>
-            <div>
-              <h3 class="text-xs md:text-sm">カテゴリー</h3>
-              <p class="text-sm md:text-base">{project.tags[0]}</p>
+              <h3 class="text-xs md:text-sm">開発期間</h3>
+              <p class="text-sm md:text-base">
+                {developmentTime}
+              </p>
             </div>
             <div>
               <h3 class="text-xs md:text-sm">使用技術</h3>
               <div class="mt-1 flex flex-wrap gap-1.5 md:mt-2 md:gap-2">
                 {
-                  project.tags.map((tag) => (
+                  tags.map((tag) => (
                     <span class="rounded-full bg-secondary px-2 py-0.5 text-xs md:px-3 md:py-1 md:text-sm">
                       {tag}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xs md:text-sm">使用ツール</h3>
+              <div class="mt-1 flex flex-wrap gap-1.5 md:mt-2 md:gap-2">
+                {
+                  tools.map((tool) => (
+                    <span class="rounded-full bg-secondary px-2 py-0.5 text-xs md:px-3 md:py-1 md:text-sm">
+                      {tool}
                     </span>
                   ))
                 }
@@ -96,14 +116,14 @@ const { project } = Astro.props;
       <div class="text-center">
         <div class="mb-3 flex items-center justify-center gap-3">
           <a
-            href="https://sample.copm"
+            href={githubLink}
             class="flex h-10 w-32 items-center justify-center gap-2 rounded-lg bg-accent text-white shadow-lg hover:opacity-80"
           >
             <img src="/src/assets/github-icon-dark.png" alt="GitHubのロゴ" class="block h-5 w-5" />
             GitHub
           </a>
           <a
-            href="https://sample.copm"
+            href={demoLink}
             class="flex h-10 w-32 items-center justify-center gap-2 rounded-lg bg-accent text-white shadow-lg hover:opacity-80"
           >
             <AppWindow class="h-5 w-5" />
