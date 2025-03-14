@@ -26,12 +26,26 @@
 }
 
 html {
-  font-family: 'Inter', system-ui, sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
+  font-family: 'M PLUS 1p', sans-serif;
   margin: 0;
   padding: 0;
   min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+p,
+div {
+  font-family: 'M PLUS 1p', sans-serif;
 }
