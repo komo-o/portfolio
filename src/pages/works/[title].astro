@@ -6,14 +6,14 @@ import Footer from '@/components/common/Footer.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const projectEntries = await getCollection('projects');
-  return projectEntries.map((entry, index) => ({
-    params: { id: (index + 1).toString() },
-    props: { project: entry },
+  const workEntries = await getCollection('works');
+  return workEntries.map((entry) => ({
+    params: { title: entry.data.title },
+    props: { work: entry },
   }));
 }
 
-const { project } = Astro.props;
+const { work } = Astro.props;
 const {
   title,
   isCompleted,
@@ -27,7 +27,7 @@ const {
   tools,
   githubLink,
   demoLink,
-} = project.data;
+} = work.data;
 ---
 
 <Layout title={`${title} | Komo`}>
@@ -131,7 +131,7 @@ const {
           </a>
         </div>
         <a
-          href="/projects"
+          href="/works"
           class="inline-flex h-10 w-32 items-center justify-center rounded-lg bg-secondary shadow-lg hover:opacity-80"
         >
           一覧に戻る

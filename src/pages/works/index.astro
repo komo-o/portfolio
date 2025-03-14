@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/common/Header.astro';
+import WorkShowcase from '@/components/works/WorkShowcase.astro';
+import Footer from '@/components/common/Footer.astro';
+---
+
+<Layout title="Works | Komo">
+  <Header />
+  <main class="mx-auto max-w-4xl px-4 pt-20 lg:pt-24">
+    <h1 class="text-center text-3xl font-bold text-accent lg:text-4xl">Works</h1>
+    <WorkShowcase />
+  </main>
+  <Footer />
+</Layout>
