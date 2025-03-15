@@ -1,34 +1,45 @@
 ---
-import ThemedImage from '@/components/common/ThemedImage';
+import lightXIcon from '@/assets/x-icon-light.png';
+import darkXIcon from '@/assets/x-icon-dark.png';
+import lightGitHubIcon from '@/assets/github-icon-light.png';
+import darkGitHubIcon from '@/assets/github-icon-dark.png';
+import QiitaIcon from '@/assets/qiita-icon.png';
+import lightZennIcon from '@/assets/zenn-icon.svg';
+import darkZennIcon from '@/assets/zenn-icon.svg';
+import ThemedImage from '@/components/common/ThemedImage.astro';
 
 const socialLinks = [
   {
     url: 'https://x.com/komo_oooo',
-    lightThemeImageSrc: '/assets/x-icon-light.png',
-    darkThemeImageSrc: '/assets/x-icon-dark.png',
+    lightImageSrc: lightXIcon,
+    darkImageSrc: darkXIcon,
     alt: 'X アカウント',
-    size: '15',
+    size: 16,
+    class: 'h-4 w-4',
   },
   {
     url: 'https://github.com/komo-o',
-    lightThemeImageSrc: '/assets/github-icon-light.png',
-    darkThemeImageSrc: '/assets/github-icon-dark.png',
+    lightImageSrc: lightGitHubIcon,
+    darkImageSrc: darkGitHubIcon,
     alt: 'GitHub アカウント',
-    size: '20',
+    size: 20,
+    class: 'h-5 w-5',
   },
   {
     url: 'https://qiita.com/komo-o',
-    lightThemeImageSrc: '/assets/qiita-icon.png',
-    darkThemeImageSrc: '/assets/qiita-icon.png',
+    lightImageSrc: QiitaIcon,
+    darkImageSrc: QiitaIcon,
     alt: 'Qiita アカウント',
-    size: '20',
+    size: 20,
+    class: 'h-5 w-5',
   },
   {
     url: 'https://zenn.dev/kotaro_k',
-    lightThemeImageSrc: '/assets/zenn-icon.svg',
-    darkThemeImageSrc: '/assets/zenn-icon.svg',
+    lightImageSrc: lightZennIcon,
+    darkImageSrc: darkZennIcon,
     alt: 'Zenn アカウント',
-    size: '20',
+    size: 20,
+    class: 'h-5 w-5',
   },
 ];
 ---
@@ -46,12 +57,12 @@ const socialLinks = [
               class="flex h-full w-full items-center justify-center rounded-full hover:opacity-80"
             >
               <ThemedImage
-                client:load
-                lightThemeImageSrc={link.lightThemeImageSrc}
-                darkThemeImageSrc={link.darkThemeImageSrc}
+                lightImageSrc={link.lightImageSrc}
+                darkImageSrc={link.darkImageSrc}
                 alt={link.alt}
-                height={link.size}
-                width={link.size}
+                heightPx={link.size}
+                widthPx={link.size}
+                class={link.class}
               />
             </a>
           </div>

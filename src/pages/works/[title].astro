@@ -1,5 +1,7 @@
 ---
 import { AppWindow, AlertCircle } from 'lucide-astro';
+import { Image } from 'astro:assets';
+import GitHubIconDark from '@/assets/github-icon-dark.png';
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/common/Header.astro';
 import Footer from '@/components/common/Footer.astro';
@@ -55,13 +57,13 @@ const {
       <div class="mb-6 grid grid-cols-1 gap-6 md:mb-10 md:grid-cols-3 md:gap-8">
         <div class="md:col-span-2">
           <h2
-            class="mb-3 inline-block border-b-4 border-accent text-lg font-bold md:mb-4 md:text-xl"
+            class="mb-3 inline-block border-b-2 border-accent text-lg font-bold md:mb-4 md:text-xl"
           >
             概要
           </h2>
-          {description.map((desc) => <p class="mb-4 text-sm md:mb-6 md:text-base">{desc}</p>)}
+          {description.map((desc) => <p class="text-sm md:text-base">{desc}</p>)}
           <h2
-            class="mb-3 inline-block border-b-4 border-accent text-lg font-bold md:mb-4 md:text-xl"
+            class="mb-3 mt-4 inline-block border-b-2 border-accent text-lg font-bold md:mb-4 md:mt-6 md:text-xl"
           >
             主な機能
           </h2>
@@ -119,7 +121,7 @@ const {
             href={githubLink}
             class="flex h-10 w-32 items-center justify-center gap-2 rounded-lg bg-accent text-white shadow-lg hover:opacity-80"
           >
-            <img src="/assets/github-icon-dark.png" alt="GitHubのロゴ" class="block h-5 w-5" />
+            <Image src={GitHubIconDark} alt="GitHubのロゴ" class="h-5 w-5" />
             GitHub
           </a>
           <a

@@ -1,10 +1,12 @@
 ---
-import ThemedImage from '@/components/common/ThemedImage';
+import HelloLight from '@/assets/hello-light.svg';
+import HelloDark from '@/assets/hello-dark.svg';
+import ThemedImage from '@/components/common/ThemedImage.astro';
 ---
 
 <section class="py-16 md:py-28">
-  <div class="mx-auto flex max-w-4xl flex-col-reverse gap-x-3 px-4 sm:flex-row">
-    <div class="flex w-full flex-col justify-center text-center sm:text-left">
+  <div class="mx-auto flex max-w-4xl flex-col-reverse justify-between px-4 sm:flex-row sm:gap-x-3">
+    <div class="flex flex-col justify-center text-center sm:text-left">
       <h1 class="mb-3 text-3xl font-bold md:text-4xl lg:text-5xl">
         Hi, I'm<br class="hidden sm:block" />
         <span class="text-accent">Kotaro Komori</span>
@@ -28,13 +30,12 @@ import ThemedImage from '@/components/common/ThemedImage';
     </div>
 
     <ThemedImage
-      client:load
-      lightThemeImageSrc="/assets/hello-light.svg"
-      darkThemeImageSrc="/assets/hello-dark.svg"
+      lightImageSrc={HelloLight}
+      darkImageSrc={HelloDark}
       alt="Hello"
-      width="384"
-      height="384"
-      className="mx-auto h-60 w-60 md:h-96 md:w-96"
+      widthPx={384}
+      heightPx={384}
+      class="mx-auto h-60 w-60 flex-shrink-0 md:h-80 md:w-80 lg:h-96 lg:w-96"
     />
   </div>
 </section>

@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  lightImageSrc: ImageMetadata;
+  darkImageSrc: ImageMetadata;
+  alt: string;
+  widthPx: number;
+  heightPx: number;
+  class?: string;
+}
+
+const { lightImageSrc, darkImageSrc, alt, widthPx, heightPx, class: className = '' } = Astro.props;
+---
+
+<div class={`relative ${className}`}>
+  <Image
+    src={lightImageSrc}
+    alt={alt}
+    width={widthPx}
+    height={heightPx}
+    class="absolute inset-0 h-full w-full dark:opacity-0"
+  />
+  <Image
+    src={darkImageSrc}
+    alt={alt}
+    width={widthPx}
+    height={heightPx}
+    class="absolute inset-0 h-full w-full opacity-0 dark:opacity-100"
+  />
+</div>
