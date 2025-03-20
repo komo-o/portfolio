@@ -2,13 +2,14 @@
 import { Menu, X } from 'lucide-astro';
 import ThemeToggle from '@/components/common/ThemeToggle.astro';
 
-const navItems = [
-  { name: 'Home', url: '/' },
-  { name: 'About', url: '/about' },
-  { name: 'Works', url: '/works' },
-];
+const { pathname } = Astro.url;
+const currentPath = pathname === '/' ? '/' : pathname.endsWith('/') ? pathname : `${pathname}/`;
 
-const pathname = Astro.url.pathname;
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about/' },
+  { name: 'Works', path: '/works/' },
+];
 ---
 
 <header class="fixed z-50 w-full bg-background py-3 md:bg-transparent md:backdrop-blur-sm">
@@ -22,9 +23,9 @@ const pathname = Astro.url.pathname;
             navItems.map((item) => (
               <li>
                 <a
-                  href={item.url}
+                  href={item.path}
                   class={`box-border block ${
-                    pathname === item.url ? 'border-b-2 border-accent' : 'hover:opacity-60'
+                    currentPath === item.path ? 'border-b-2 border-accent' : 'hover:opacity-60'
                   }`}
                 >
                   {item.name}
@@ -50,7 +51,7 @@ const pathname = Astro.url.pathname;
       {
         navItems.map((item) => (
           <li class="py-2">
-            <a href={item.url} class="hover: block text-foreground transition-colors">
+            <a href={item.path} class="block text-foreground transition-colors hover:opacity-60">
               {item.name}
             </a>
           </li>
@@ -77,6 +78,8 @@ const pathname = Astro.url.pathname;
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
+        mobileMenuIcon.classList.remove('hidden');
+        mobileMenuIconClose.classList.add('hidden');
       });
     });
   }
